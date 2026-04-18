@@ -33,16 +33,16 @@ public class Utilidades {
     public static boolean validar() {
         int cont = 0;
         int i = 0;
-        while (i < Datos.cant.length) {
-            if (Datos.cant[i] > 0) {
+        while (i < Datos.cantidades.length) {
+            if (Datos.cantidades[i] > 0) {
                 cont = cont + 1;
             }
             i++;
         }// fin while
 // reinicia si no hay nada - efecto secundario no documentado
         if (cont == 0) {
-            Datos.tot = 0;
-            Datos.tmp = "";
+            Datos.totalActual = 0;
+            Datos.textoTemporal = "";
         }
         return cont > 0;
     }
@@ -65,13 +65,13 @@ public class Utilidades {
 // else{ sub=sub+(sub*0.19); }
 // Datos.tot=sub;
         int i = 0;
-        while (i < Datos.cant.length) {
-            Datos.cant[i] = 0;
+        while (i < Datos.cantidades.length) {
+            Datos.cantidades[i] = 0;
             i++;
         }
-        Datos.tot = 0;
-        Datos.est = 0;
-        Datos.ms = 0;
-        Datos.tmp = "";
+        Datos.totalActual = 0;
+        Datos.estadoMesa = 0;
+        Datos.numeroMesa = 0;
+        Datos.textoTemporal = "";
     }
 }

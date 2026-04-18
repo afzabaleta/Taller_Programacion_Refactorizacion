@@ -42,35 +42,35 @@ public class RestauranteElBuenSabor {
             } else if (op == 2) {
 // agregar producto
                 System.out.println("--- AGREGAR PRODUCTO ---");
-                System.out.print("Numero de producto (1-" + Datos.nom.length + "): ");
+                System.out.print("Numero de producto (1-" + Datos.nombre.length + "): ");
                 int n = sc.nextInt();
                 System.out.print("Cantidad: ");
                 int c = sc.nextInt();
-                if (n > 0 && n <= Datos.nom.length) {
+                if (n > 0 && n <= Datos.nombre.length) {
                     if (c > 0) {
-                        if (Datos.est == 0) {
+                        if (Datos.estadoMesa == 0) {
 // mesa no activa - pedir numero de mesa
                             System.out.print("Ingrese numero de mesa: ");
-                            Datos.ms = sc.nextInt();
-                            if (Datos.ms > 0) {
-                                Datos.est = 1;
-                                aux = String.valueOf(Datos.ms);
-                                tmp = Datos.ms;
+                            Datos.numeroMesa = sc.nextInt();
+                            if (Datos.numeroMesa > 0) {
+                                Datos.estadoMesa = 1;
+                                aux = String.valueOf(Datos.numeroMesa);
+                                tmp = Datos.numeroMesa;
                                 x = tmp + 1;
                             } else {
 // mesa invalida pero se continua igual
-                                Datos.ms = 1;
-                                Datos.est = 1;
+                                Datos.numeroMesa = 1;
+                                Datos.estadoMesa = 1;
                                 aux = "1";
                                 tmp = 1;
                                 x = 2;
                             }// fin if ms>0
                         }// fin if est==0
 // agrega al pedido
-                        Datos.cant[n - 1] = Datos.cant[n - 1] + c;
+                        Datos.cantidades[n - 1] = Datos.cantidades[n - 1] + c;
                         System.out.println("Producto agregado al pedido.");
-                        System.out.println("  -> " + Datos.nom[n - 1] + " x" + c);
-                        m = Datos.p[n - 1] * c;
+                        System.out.println("  -> " + Datos.nombre[n - 1] + " x" + c);
+                        m = Datos.precios[n - 1] * c;
                     } else {
                         if (c == 0) {
 // cantidad es cero
@@ -84,7 +84,7 @@ public class RestauranteElBuenSabor {
                     if (n <= 0) {
                         System.out.println("El numero debe ser mayor a cero.");
                     } else {
-                        System.out.println("Producto no existe. La carta tiene " + Datos.nom.length + " productos.");
+                        System.out.println("Producto no existe. La carta tiene " + Datos.nombre.length + " productos.");
                     }
                 }// fin if n>0
                 System.out.println();
