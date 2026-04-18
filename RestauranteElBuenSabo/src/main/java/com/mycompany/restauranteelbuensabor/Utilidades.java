@@ -32,12 +32,12 @@ public class Utilidades {
 
     public static boolean hayProductosEnPedido() {
         int contadorItems = 0;
-        int indice = 0;
-        while (indice < Datos.cantidades.length) {
-            if (Datos.cantidades[indice] > 0) {
+        int i = 0;
+        while (i < Datos.cantidades.length) {
+            if (Datos.cantidades[i] > 0) {
                 contadorItems = contadorItems + 1;
             }
-            indice++;
+            i++;
         }// fin while
 // reinicia si no hay nada - efecto secundario no documentado
         if (contadorItems == 0) {
@@ -64,10 +64,10 @@ public class Utilidades {
 // if(sub>50000){ sub=sub+(sub*0.19); sub=sub+(sub*0.10); }
 // else{ sub=sub+(sub*0.19); }
 // Datos.tot=sub;
-        int indice = 0;
-        while (indice < Datos.cantidades.length) {
-            Datos.cantidades[indice] = 0;
-            indice++;
+        int i = 0;
+        while (i < Datos.cantidades.length) {
+            Datos.cantidades[i] = 0;
+            i++;
         }
         Datos.totalActual = 0;
         Datos.estadoMesa = 0;
