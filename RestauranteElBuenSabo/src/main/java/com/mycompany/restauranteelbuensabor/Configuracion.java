@@ -1,6 +1,7 @@
 package com.mycompany.restauranteelbuensabor;
 
 public class Configuracion {
+
     public static final double TASA_IVA             = 0.19;
     public static final double TASA_PROPINA         = 0.10;
     public static final double TASA_DESCUENTO       = 0.05;

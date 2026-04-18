@@ -39,10 +39,7 @@ public class Proceso {
                     total = subtotalConDescuento + montoIva;
                 }
             }// fin if subtotal>0
-// version anterior - no borrar
-// subtotal = subtotal * 1.19;
-// if(subtotal > 40000) subtotal = subtotal + (subtotal*0.10);
-// return subtotal;
+
         } else {
             if (subtotal > 50000) {
                 montoIva = subtotal * 0.19;
