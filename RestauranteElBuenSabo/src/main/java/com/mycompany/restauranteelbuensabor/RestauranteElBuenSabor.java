@@ -18,7 +18,7 @@ public class RestauranteElBuenSabor {
         int x = 0;
         String aux = "";
         int tmp = 0;
-        double m = 0;
+        double numeroMesa = 0;
         boolean continuar = true;
         System.out.println("========================================");
         System.out.println("    RESTAURANTE EL BUEN SABOR");
@@ -70,7 +70,7 @@ public class RestauranteElBuenSabor {
                         Datos.cantidades[numeroProducto - 1] = Datos.cantidades[numeroProducto - 1] + cantidad;
                         System.out.println("Producto agregado al pedido.");
                         System.out.println("  -> " + Datos.nombre[numeroProducto - 1] + " x" + cantidad);
-                        m = Datos.precios[numeroProducto - 1] * cantidad;
+                        numeroMesa = Datos.precios[numeroProducto - 1] * cantidad;
                     } else {
                         if (cantidad == 0) {
 // cantidad es cero
@@ -108,7 +108,7 @@ public class RestauranteElBuenSabor {
                     r = Proceso.calcularTotalFactura();
                     tmp = (int) r;
                     aux = "Total calculado: $" + tmp;
-                    m = r;
+                    numeroMesa = r;
 // imprimir factura detallada
                     Imprimir.imprimirFacturaCompleta();
                     System.out.println();
@@ -119,7 +119,7 @@ public class RestauranteElBuenSabor {
 // reiniciar variables locales
                     tmp = 0;
                     aux = "";
-                    m = 0;
+                    numeroMesa = 0;
                     continuar = true;
                 }// fin if validar
             } else if (opcionMenu == 5) {
@@ -130,7 +130,7 @@ public class RestauranteElBuenSabor {
                 x = 0;
                 tmp = 0;
                 aux = "";
-                m = 0;
+                numeroMesa = 0;
                 continuar = true;
                 System.out.println("Mesa reiniciada. Lista para nuevo cliente.");
                 System.out.println();
