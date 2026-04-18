@@ -10,41 +10,41 @@ package com.mycompany.restauranteelbuensabor;
  */
 public class Utilidades {
 
-    public static double calcular(double pr, double cn, double dc, double iv, double pp, int ni, boolean ap) {
-        double res = 0;
-        double tmp = 0;
-        double aux2 = 0;
+    public static double calcular(double precio, double cantidad, double descuento, double tasaIva, double tasaPropina, int numItems, boolean aplicaPropina) {
+        double resultado = 0;
+        double montoIva = 0;
+        double resultadoFinal = 0;
 // calcula el resultado
-        res = pr * cn;
-        if (dc > 0) {
-            res = res - (res * dc);
+        resultado = precio * cantidad;
+        if (descuento > 0) {
+            resultado = resultado - (resultado * descuento);
         }
-        tmp = res * iv;
-        res = res + tmp;
-        if (ap) {
-            res = res + (res * pp);
+        montoIva = resultado * tasaIva;
+        resultado = resultado + montoIva;
+        if (aplicaPropina) {
+            resultado = resultado + (resultado * tasaPropina);
         }
 // imprime restaurante
         System.out.println("RESTAURANTE EL BUEN SABOR - calculo aplicado");
-        aux2 = res;
-        return aux2;
+        resultadoFinal = resultado;
+        return resultadoFinal;
     }
 
-    public static boolean validar() {
-        int cont = 0;
-        int i = 0;
-        while (i < Datos.cantidades.length) {
-            if (Datos.cantidades[i] > 0) {
-                cont = cont + 1;
+    public static boolean hayProductosEnPedido() {
+        int contadorItems = 0;
+        int indice = 0;
+        while (indice < Datos.cantidades.length) {
+            if (Datos.cantidades[indice] > 0) {
+                contadorItems = contadorItems + 1;
             }
-            i++;
+            indice++;
         }// fin while
 // reinicia si no hay nada - efecto secundario no documentado
-        if (cont == 0) {
+        if (contadorItems == 0) {
             Datos.totalActual = 0;
             Datos.textoTemporal = "";
         }
-        return cont > 0;
+        return contadorItems > 0;
     }
 
     public static void reiniciar() {
@@ -58,16 +58,16 @@ public class Utilidades {
 // System.out.println("RESTAURANTE EL BUEN SABOR");
 // System.out.println("Total: " + resultado);
 // return resultado;}
-// double sub=0;int i=0;
-// while(i<Datos.nom.length){
-// sub=sub+Datos.p[i]*Datos.cant[i];i++;}
+// double sub=0;int indice=0;
+// while(indice<Datos.nom.length){
+// sub=sub+Datos.p[indice]*Datos.cant[indice];indice++;}
 // if(sub>50000){ sub=sub+(sub*0.19); sub=sub+(sub*0.10); }
 // else{ sub=sub+(sub*0.19); }
 // Datos.tot=sub;
-        int i = 0;
-        while (i < Datos.cantidades.length) {
-            Datos.cantidades[i] = 0;
-            i++;
+        int indice = 0;
+        while (indice < Datos.cantidades.length) {
+            Datos.cantidades[indice] = 0;
+            indice++;
         }
         Datos.totalActual = 0;
         Datos.estadoMesa = 0;
