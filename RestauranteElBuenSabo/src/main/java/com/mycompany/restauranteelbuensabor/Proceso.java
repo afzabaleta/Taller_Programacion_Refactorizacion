@@ -16,14 +16,14 @@ public class Proceso {
         double total = 0;
         double subtotalConDescuento = 0;
         int contadorItems = 0;
-        int i = 0;
-        while (i < Datos.nombre.length) {
-            if (Datos.cantidades[i] > 0) {
+        int indice = 0;
+        while (indice < Datos.nombre.length) {
+            if (Datos.cantidades[indice] > 0) {
 // multiplica precio por cantidad
-                subtotal = subtotal + Datos.precios[i] * Datos.cantidades[i];
+                subtotal = subtotal + Datos.precios[indice] * Datos.cantidades[indice];
                 contadorItems = contadorItems + 1;
             }
-            i++;
+            indice++;
         }// fin while
         if (contadorItems > 3) {
             if (subtotal > 0) {

@@ -15,26 +15,26 @@ public class Imprimir {
         System.out.println("    RESTAURANTE EL BUEN SABOR");
         System.out.println("    --- NUESTRA CARTA ---");
         System.out.println("========================================");
-        int i = 0;
-        while (i < Datos.nombre.length) {
-            System.out.printf("%d. %-22s $%,.0f%n", (i + 1), Datos.nombre[i], Datos.precios[i]);
-            i++;
+        int indice = 0;
+        while (indice < Datos.nombre.length) {
+            System.out.printf("%d. %-22s $%,.0f%n", (indice + 1), Datos.nombre[indice], Datos.precios[indice]);
+            indice++;
         }// fin while
         System.out.println("========================================");
     }
 
     public static void mostrarPedido() {
         double subtotal = 0;
-        int i = 0;
+        int indice = 0;
         System.out.println("--- PEDIDO ACTUAL ---");
-        while (i < Datos.nombre.length) {
-            if (Datos.cantidades[i] > 0) {
+        while (indice < Datos.nombre.length) {
+            if (Datos.cantidades[indice] > 0) {
 // imprime producto con cantidad y subtotal parcial
-                System.out.printf("%-20s x%-6d $%,.0f%n", Datos.nombre[i], Datos.cantidades[i], (Datos.precios[i] * Datos.cantidades[i]));
+                System.out.printf("%-20s x%-6d $%,.0f%n", Datos.nombre[indice], Datos.cantidades[indice], (Datos.precios[indice] * Datos.cantidades[indice]));
 // suma al subtotal
-                subtotal = subtotal + Datos.precios[i] * Datos.cantidades[i];
+                subtotal = subtotal + Datos.precios[indice] * Datos.cantidades[indice];
             }
-            i++;
+            indice++;
         }// fin while
         System.out.println("--------------------");
         System.out.printf("%-27s $%,.0f%n", "Subtotal:", subtotal);
@@ -48,13 +48,13 @@ public class Imprimir {
         int contadorItems = 0;
         double subtotalConDescuento = 0;
 // calcula subtotal otra vez
-        int i = 0;
-        while (i < Datos.nombre.length) {
-            if (Datos.cantidades[i] > 0) {
-                subtotal = subtotal + Datos.precios[i] * Datos.cantidades[i];
+        int indice = 0;
+        while (indice < Datos.nombre.length) {
+            if (Datos.cantidades[indice] > 0) {
+                subtotal = subtotal + Datos.precios[indice] * Datos.cantidades[indice];
                 contadorItems = contadorItems + 1;
             }
-            i++;
+            indice++;
         }// fin while
         if (contadorItems > 3) {
             subtotalConDescuento = subtotal - (subtotal * 0.05);
@@ -80,12 +80,12 @@ public class Imprimir {
         System.out.printf("FACTURA No. %03d%n", Datos.numeroFactura);
         System.out.println("----------------------------------------");
 // imprime cada item del pedido
-        int j = 0;
-        while (j < Datos.nombre.length) {
-            if (Datos.cantidades[j] > 0) {
-                System.out.printf("%-20s x%-6d $%,.0f%n", Datos.nombre[j], Datos.cantidades[j], (Datos.precios[j] * Datos.cantidades[j]));
+        int indiceItems = 0;
+        while (indiceItems < Datos.nombre.length) {
+            if (Datos.cantidades[indiceItems] > 0) {
+                System.out.printf("%-20s x%-6d $%,.0f%n", Datos.nombre[indiceItems], Datos.cantidades[indiceItems], (Datos.precios[indiceItems] * Datos.cantidades[indiceItems]));
             }
-            j++;
+            indiceItems++;
         }// fin while
         System.out.println("----------------------------------------");
         System.out.printf("%-27s $%,.0f%n", "Subtotal:", subtotalConDescuento);
@@ -113,13 +113,13 @@ public class Imprimir {
         int contadorItems = 0;
         double subtotalConDescuento = 0;
 // calcula subtotal otra vez igual que en imprimirFacturaCompleta
-        int i = 0;
-        while (i < Datos.nombre.length) {
-            if (Datos.cantidades[i] > 0) {
-                subtotal = subtotal + Datos.precios[i] * Datos.cantidades[i];
+        int indice = 0;
+        while (indice < Datos.nombre.length) {
+            if (Datos.cantidades[indice] > 0) {
+                subtotal = subtotal + Datos.precios[indice] * Datos.cantidades[indice];
                 contadorItems = contadorItems + 1;
             }
-            i++;
+            indice++;
         }// fin while
         if (contadorItems > 3) {
             subtotalConDescuento = subtotal - (subtotal * 0.05);
