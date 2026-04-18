@@ -16,8 +16,8 @@ public class Imprimir {
         System.out.println("    --- NUESTRA CARTA ---");
         System.out.println("========================================");
         int indice = 0;
-        while (indice < Datos.nombre.length) {
-            System.out.printf("%d. %-22s $%,.0f%n", (indice + 1), Datos.nombre[indice], Datos.precios[indice]);
+        while (indice < Datos.nombres.length) {
+            System.out.printf("%d. %-22s $%,.0f%n", (indice + 1), Datos.nombres[indice], Datos.precios[indice]);
             indice++;
         }// fin while
         System.out.println("========================================");
@@ -27,10 +27,10 @@ public class Imprimir {
         double subtotal = 0;
         int indice = 0;
         System.out.println("--- PEDIDO ACTUAL ---");
-        while (indice < Datos.nombre.length) {
+        while (indice < Datos.nombres.length) {
             if (Datos.cantidades[indice] > 0) {
 // imprime producto con cantidad y subtotal parcial
-                System.out.printf("%-20s x%-6d $%,.0f%n", Datos.nombre[indice], Datos.cantidades[indice], (Datos.precios[indice] * Datos.cantidades[indice]));
+                System.out.printf("%-20s x%-6d $%,.0f%n", Datos.nombres[indice], Datos.cantidades[indice], (Datos.precios[indice] * Datos.cantidades[indice]));
 // suma al subtotal
                 subtotal = subtotal + Datos.precios[indice] * Datos.cantidades[indice];
             }
@@ -49,7 +49,7 @@ public class Imprimir {
         double subtotalConDescuento = 0;
 // calcula subtotal otra vez
         int indice = 0;
-        while (indice < Datos.nombre.length) {
+        while (indice < Datos.nombres.length) {
             if (Datos.cantidades[indice] > 0) {
                 subtotal = subtotal + Datos.precios[indice] * Datos.cantidades[indice];
                 contadorItems = contadorItems + 1;
@@ -81,9 +81,9 @@ public class Imprimir {
         System.out.println("----------------------------------------");
 // imprime cada item del pedido
         int indiceItems = 0;
-        while (indiceItems < Datos.nombre.length) {
+        while (indiceItems < Datos.nombres.length) {
             if (Datos.cantidades[indiceItems] > 0) {
-                System.out.printf("%-20s x%-6d $%,.0f%n", Datos.nombre[indiceItems], Datos.cantidades[indiceItems], (Datos.precios[indiceItems] * Datos.cantidades[indiceItems]));
+                System.out.printf("%-20s x%-6d $%,.0f%n", Datos.nombres[indiceItems], Datos.cantidades[indiceItems], (Datos.precios[indiceItems] * Datos.cantidades[indiceItems]));
             }
             indiceItems++;
         }// fin while
@@ -114,7 +114,7 @@ public class Imprimir {
         double subtotalConDescuento = 0;
 // calcula subtotal otra vez igual que en imprimirFacturaCompleta
         int indice = 0;
-        while (indice < Datos.nombre.length) {
+        while (indice < Datos.nombres.length) {
             if (Datos.cantidades[indice] > 0) {
                 subtotal = subtotal + Datos.precios[indice] * Datos.cantidades[indice];
                 contadorItems = contadorItems + 1;
