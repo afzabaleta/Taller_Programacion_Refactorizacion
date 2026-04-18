@@ -105,7 +105,7 @@ public class RestauranteElBuenSabor {
                 if (Utilidades.validar()) {
                     double r = 0;
 // procesar pedido y generar total
-                    r = Proceso.hacerTodo();
+                    r = Proceso.calcularTotalFactura();
                     tmp = (int) r;
                     aux = "Total calculado: $" + tmp;
                     m = r;
