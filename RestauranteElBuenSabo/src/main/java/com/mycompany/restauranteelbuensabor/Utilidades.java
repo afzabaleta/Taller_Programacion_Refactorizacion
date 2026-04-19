@@ -10,31 +10,12 @@ package com.mycompany.restauranteelbuensabor;
  */
 public class Utilidades {
 
-    public static boolean hayProductosEnPedido() {
-        int contadorItems = 0;
-        int indice = 0;
-        while (indice < Datos.cantidades.length) {
-            if (Datos.cantidades[indice] > 0) {
-                contadorItems = contadorItems + 1;
-            }
-            indice++;
-        }
-        if (contadorItems == 0) {
-            Datos.totalActual = 0;
-            Datos.textoTemporal = "";
-        }
-        return contadorItems > 0;
+    public static boolean hayProductosEnPedido(Pedido pedido) {
+        return pedido.tieneProductos();
     }
 
-    public static void reiniciar() {
-        int indice = 0;
-        while (indice < Datos.cantidades.length) {
-            Datos.cantidades[indice] = 0;
-            indice++;
-        }
-        Datos.totalActual = 0;
-        Datos.estadoMesa = 0;
-        Datos.numeroMesa = 0;
-        Datos.textoTemporal = "";
+    public static void reiniciar(Pedido pedido, Mesa mesa) {
+        pedido.limpiar();
+        mesa.reiniciar();
     }
 }
